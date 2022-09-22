@@ -59,9 +59,6 @@ ll lcm(ll a, ll b) {return ((a * b) / (gcd(a, b)));}
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-int countDigits(int n){
-    return log10(n) + 1;
-}
 
 int main() {
 
@@ -74,7 +71,7 @@ int main() {
     fastio();
 
     int n;cin>>n;
-    cout<<countDigits(n)<<endl;
+    cout<<log10(n)+1<<endl;
 
     return 0;
 }
