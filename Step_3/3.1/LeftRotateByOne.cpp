@@ -59,18 +59,6 @@ ll lcm(ll a, ll b) {return ((a * b) / (gcd(a, b)));}
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-void Reverse(vi &arr, int s , int e){
-    while(s<=e) {
-        swap(arr[s],arr[e]);
-        s++;e--;
-    }
-}
-void rotateLeft(vi &arr, int n, int k){
-    Reverse(arr, 0, k-1);
-    Reverse(arr,k,n-1);
-    Reverse(arr,0,n-1);
-}
-
 int main() {
 
 #ifndef ONLINE_JUDGE
@@ -81,10 +69,13 @@ int main() {
 
     fastio();
 
-    int n;cin>>n;int k;cin>>k;
+    int n;cin>>n;
     vi arr(n);
     for(int i= 0;i<n;i++) cin>>arr[i];
-    rotateLeft(arr,n,k);
+    int temp = arr[0];
+    for(int i= 0 ;i<n-1;i++){
+        arr[i]= arr[i+1];
+    }arr[n-1]= temp;
     for(auto &it: arr) cout<<it<<" ";
 
     return 0;
