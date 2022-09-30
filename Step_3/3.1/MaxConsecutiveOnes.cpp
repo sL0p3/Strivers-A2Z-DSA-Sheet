@@ -87,7 +87,6 @@ int main() {
     vi arr(n);
     for(int i= 0 ;i<n;i++) cin>>arr[i];
     cout<<maxConsecutiveOnes(arr,n)<<endl;
-
     return 0;
 }
 
