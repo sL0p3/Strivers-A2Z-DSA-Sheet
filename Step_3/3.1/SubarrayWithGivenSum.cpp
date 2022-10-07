@@ -67,8 +67,7 @@ int longestSubarrySumK(vi arr, int n, int k){
             sum+= arr[j];
             if(sum==k) ans = max(ans, (j-i+1));
         }
-    }
-    return ans ;
+    }return ans ;
 }
 
 int main() {
