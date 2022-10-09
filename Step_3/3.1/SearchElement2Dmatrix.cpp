@@ -92,7 +92,7 @@ int main() {
             cin>>arr[i][j];
         }
     }
-
+    cout<<searchMatrix(arr,x);
     return 0;
 }
 
