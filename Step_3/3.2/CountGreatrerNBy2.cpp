@@ -75,9 +75,13 @@ int main() {
     for(int i= 0;i<n;i++){
         cin>>arr[i];
     }
-    sort(all(arr));
-    for(auto &it: arr) cout<<it<<" ";
-
+    int count = 0 ,ans = 0 ;
+    for(auto &it: arr){
+        if (count ==0 ) ans = it;
+        if(it == ans) count+= 1;
+        else count -= 1;
+    }
+    cout<<ans<<endl;
     return 0;
 }
 
