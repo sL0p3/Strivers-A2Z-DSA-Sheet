@@ -61,7 +61,7 @@ ll lcm(ll a, ll b) {return ((a * b) / (gcd(a, b)));}
 
 void nextPermutation(vi &arr){
     int n = arr.size(),ind1,ind2;
-    for(int i = n-2 ;i>0;i++){
+    for(int i = n-2 ;i>=0;i--){
         if(arr[i]<arr[i+1]) {
             ind1 = i;
             break;
@@ -69,15 +69,15 @@ void nextPermutation(vi &arr){
     }
     if(ind1<0) reverse(arr.begin(),arr.end());
     else{
-        for(int i= n-1;i>ind1;i++){
+        for(int i= n-1;i>ind1;i--){
             if(arr[i]> arr[ind1]) {
                 ind2 = i;
                 break;
             }
         }
-    }
-    swap(arr[ind1],arr[ind2]);
-    reverse(arr.begin()+ind1+1,arr.end());
+        swap(arr[ind1],arr[ind2]);
+        reverse(arr.begin()+ind1+1,arr.end());
+    }  
 }
 
 int main() {
