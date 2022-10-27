@@ -59,6 +59,27 @@ ll lcm(ll a, ll b) {return ((a * b) / (gcd(a, b)));}
 
 /*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
+void nextPermutation(vi &arr){
+    int n = arr.size(),ind1,ind2;
+    for(int i = n-2 ;i>0;i++){
+        if(arr[i]<arr[i+1]) {
+            ind1 = i;
+            break;
+        }
+    }
+    if(ind1<0) reverse(arr.begin(),arr.end());
+    else{
+        for(int i= n-1;i>ind1;i++){
+            if(arr[i]> arr[ind1]) {
+                ind2 = i;
+                break;
+            }
+        }
+    }
+    swap(arr[ind1],arr[ind2]);
+    reverse(arr.begin()+ind1+1,arr.end());
+}
+
 int main() {
 
 #ifndef ONLINE_JUDGE
@@ -69,9 +90,15 @@ int main() {
 
     fastio();
 
-    int arr[] = {3,1,2};
-    next_permutation(arr,arr+3);
-    cout<<arr[0]<<" "<<arr[1]<<" "<<arr[2];
+    // int arr[] = {3,1,2};
+    // next_permutation(arr,arr+3);
+    // cout<<arr[0]<<" "<<arr[1]<<" "<<arr[2];
+
+    int n;cin>>n;
+    vi arr(n);
+    for(int i= 0 ;i<n;i++) cin>>arr[i];
+    nextPermutation(arr);
+    for(int i= 0 ;i<n;i++) cout<<arr[i]<<" ";
 
     return 0;
 }
